@@ -5,7 +5,8 @@ const f = createUploadthing();
  
 const handleAuth = () =>{
     const userId = auth();
-    if (!userId) throw new Error("Unauthorized")
+    if (!userId) throw new Error
+    ("Unauthorized")
     return {userId: userId};
 }
  
@@ -16,6 +17,6 @@ export const ourFileRouter = {
        messageFile: f(["image", "pdf"])
         .middleware(() => handleAuth())
         .onUploadComplete(() => {})
-    } satisfies FileRouter;
+    } satisfies FileRouter; 
  
-export type OurFileRouter = typeof ourFileRouter;
+export type OurFileRouter = typeof ourFileRouter;  
