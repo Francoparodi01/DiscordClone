@@ -85,7 +85,7 @@ export const InviteModal = () =>{
                         size="sm"
                         className="text-xs text-zinc-500 mt-4"
                     >
-                        Generate a new link
+                        Generate algo nuevo loko
                     <RefreshCw className="w-4 h-4 ml-2"/>
                     </Button>
                 </div>
