@@ -29,7 +29,7 @@ export const InviteModal = () =>{
     
     const inviteUrl = `${origin}/invite/${server?.inviteCode}`;;
 
-    //funcion que da uso al boton de copial
+    //funcion que da uso al boton de copiar
     const onCopy = () =>{
         navigator.clipboard.writeText(inviteUrl);
         setCopied(true);
