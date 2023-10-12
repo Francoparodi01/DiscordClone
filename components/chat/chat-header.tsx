@@ -33,7 +33,7 @@ export const ChatHeader = ({
         {name}
       </p>
       <div className="ml-auto flex items-center">
-          <SocketIndicator/>
+        <SocketIndicator />
       </div>
     </div>
   )

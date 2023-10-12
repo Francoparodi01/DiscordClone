@@ -8,8 +8,7 @@ datasource db {
   relationMode = "prisma"
 }
 
-
-model Profile{
+model Profile {
   id String @id @default(uuid())
   userId String @unique
   name String
@@ -24,7 +23,7 @@ model Profile{
   updatedAt DateTime @updatedAt
 }
 
-model Server{
+model Server {
   id String @id @default(uuid())
   name String
   imageUrl String @db.Text
@@ -33,7 +32,7 @@ model Server{
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
-  members Member []
+  members Member[]
   channels Channel[]
 
   createdAt DateTime @default(now())
@@ -42,15 +41,15 @@ model Server{
   @@index([profileId])
 }
 
-enum memberRole{
+enum MemberRole {
   ADMIN
   MODERATOR
   GUEST
 }
 
-model Member{
+model Member {
   id String @id @default(uuid())
-  role memberRole @default(GUEST)
+  role MemberRole @default(GUEST)
 
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
@@ -58,11 +57,11 @@ model Member{
   serverId String
   server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
-  Messages Message[]
+  messages Message[]
   directMessages DirectMessage[]
 
   conversationsInitiated Conversation[] @relation("MemberOne")
-  conversationsRecived Conversation[] @relation("MemberTwo")
+  conversationsReceived Conversation[] @relation("MemberTwo")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -71,13 +70,13 @@ model Member{
   @@index([serverId])
 }
 
-enum ChannelType{
+enum ChannelType {
   TEXT
   AUDIO
   VIDEO
 }
 
-model Channel{
+model Channel {
   id String @id @default(uuid())
   name String
   type ChannelType @default(TEXT)
@@ -144,7 +143,7 @@ model DirectMessage {
 
   conversationId String
   conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
-  
+
   deleted Boolean @default(false)
 
   createdAt DateTime @default(now())
