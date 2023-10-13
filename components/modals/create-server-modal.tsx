@@ -52,6 +52,7 @@ export const CreateServerModal = () =>{
     });
 
     const isLoading = form.formState.isSubmitting;
+    
     const onSubmit = async (values: z.infer<typeof formSchema>) =>{
         try {
             const url = qs.stringifyUrl({
@@ -128,7 +129,7 @@ export const CreateServerModal = () =>{
                             />
                         </div>
                         <DialogFooter className="bg-gray-100 px-6 py-4">
-                            <Button variant="primary" disabled={isLoading}>
+                            <Button variant="primary" disabled={isLoading} onClick={() => onSubmit}>
                                 Create
                             </Button>
                         </DialogFooter>

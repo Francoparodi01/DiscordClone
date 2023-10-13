@@ -1,7 +1,7 @@
 "use client";
 
 import { ServerWithMembersWithProfiles } from "@/types";
-import { memberRole } from "@prisma/client";
+import { MemberRole } from "@prisma/client";
 import { 
   ChevronDown, 
   LogOut, 
@@ -23,7 +23,7 @@ import { useModal } from "@/hooks/use-modal-store";
 
 interface ServerHeaderProps {
   server: ServerWithMembersWithProfiles;
-  role?: memberRole;
+  role?: MemberRole;
 };
 
 export const ServerHeader = ({
@@ -32,8 +32,8 @@ export const ServerHeader = ({
 }: ServerHeaderProps) => {
   const { onOpen } = useModal();
 
-  const isAdmin = role === memberRole.ADMIN;
-  const isModerator = isAdmin || role === memberRole.MODERATOR;
+  const isAdmin = role === MemberRole.ADMIN;
+  const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
   return (
     <DropdownMenu>
