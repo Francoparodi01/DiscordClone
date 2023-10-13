@@ -5,7 +5,7 @@ import { currentProfile } from "@/lib/current-profile";
 
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { memberRole } from "@prisma/client";
+import { MemberRole } from "@prisma/client";
 
 export async function POST(req: Request) {
     try{
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
                 },
                 members: {
                     create: [
-                        { profileId: profile.id, role: memberRole.ADMIN }
+                        { profileId: profile.id, role: MemberRole.ADMIN }
                     ]
                 }
             }
