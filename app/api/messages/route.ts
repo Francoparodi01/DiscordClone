@@ -19,7 +19,7 @@ export async function GET(
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-
+  
     if (!channelId) {
       return new NextResponse("Channel ID missing", { status: 400 });
     }
