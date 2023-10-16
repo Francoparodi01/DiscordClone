@@ -13,7 +13,7 @@ import {
   ShieldQuestion
 } from "lucide-react";
 import { useState } from "react";
-import { memberRole } from "@prisma/client";
+import { MemberRole } from "@prisma/client";
 import { useRouter } from "next/navigation";
 
 import {
@@ -74,7 +74,7 @@ export const MembersModal = () => {
     }
   }
 
-  const onRoleChange = async (memberId: string, role: memberRole) => {
+  const onRoleChange = async (memberId: string, role: MemberRole) => {
     try {
       setLoadingId(memberId);
       const url = qs.stringifyUrl({
