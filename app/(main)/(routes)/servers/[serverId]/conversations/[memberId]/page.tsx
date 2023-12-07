@@ -1,9 +1,9 @@
 import { redirectToSignIn } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
+import { db } from "@/lib/db";
 import { getOrCreateConversation } from "@/lib/conversation";
 import { currentProfile } from "@/lib/current-profile";
-import { db } from "@/lib/db";
 import { ChatHeader } from "@/components/chat/chat-header";
 import { ChatMessages } from "@/components/chat/chat-messages";
 import { ChatInput } from "@/components/chat/chat-input";
@@ -14,7 +14,7 @@ interface MemberIdPageProps {
     memberId: string;
     serverId: string;
   },
-    searchParams: {
+  searchParams: {
     video?: boolean;
   }
 }
@@ -61,7 +61,7 @@ const MemberIdPage = async ({
         serverId={params.serverId}
         type="conversation"
       />
-       {searchParams.video && (
+      {searchParams.video && (
         <MediaRoom
           chatId={conversation.id}
           video={true}
@@ -96,4 +96,5 @@ const MemberIdPage = async ({
     </div>
    );
 }
+ 
 export default MemberIdPage;
