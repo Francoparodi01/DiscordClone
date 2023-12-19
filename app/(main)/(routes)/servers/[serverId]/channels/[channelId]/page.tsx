@@ -94,4 +94,4 @@ const ChannelIdPage = async ({
    );
 }
  
-export default ChannelIdPage;
+export default ChannelIdPage; 
