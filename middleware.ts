@@ -1,10 +1,12 @@
 import { authMiddleware } from "@clerk/nextjs";
- 
-// This example protects all routes including api/trpc routes
-// Please edit this to allow other routes to be public as needed.
-// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your middleware
+
+// This middleware protects routes using Clerk authentication.
+// You can customize the configuration as needed.
 export default authMiddleware({});
- 
+
+// Configuration for the middleware
 export const config = {
+  // Matcher defines which routes should be protected.
+  // Here, it's set to protect all routes except those matching specific patterns.
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };
