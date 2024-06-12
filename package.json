@@ -71,6 +71,10 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.4",
+<<<<<<< HEAD
     "prisma": "^5.14.0"
+=======
+    "prisma": "^5.11.0"
+>>>>>>> be20baada8fd8ffcfd506d3a50e179a5781ef51a
   }
 }
