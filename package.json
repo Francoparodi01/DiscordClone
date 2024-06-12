@@ -1,6 +1,6 @@
 {
   "name": "discord-clone",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -71,10 +71,6 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.4",
-<<<<<<< HEAD
     "prisma": "^5.14.0"
-=======
-    "prisma": "^5.11.0"
->>>>>>> be20baada8fd8ffcfd506d3a50e179a5781ef51a
   }
 }
